@@ -1,0 +1,21 @@
+// 引入http模块
+const http = require('http');
+
+// 设置主机名和端口号
+const hostname = '127.0.0.1';
+const port = 3000;
+
+// 创建HTTP服务器
+const server = http.createServer((req, res) => {
+  // 设置响应头信息
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+
+  // 发送响应内容
+  res.end('Hello, World!\n');
+});
+
+// 启动服务器并监听指定端口
+server.listen(port, hostname, () => {
+  console.log(`服务器运行在 http://${hostname}:${port}/`);
+});
